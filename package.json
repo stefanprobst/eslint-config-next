@@ -1,7 +1,7 @@
 {
   "name": "@stefanprobst/eslint-config-next",
   "version": "1.0.2",
-  "main": "src/index.js",
+  "main": ".eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "author": "Stefan Probst <stefanprobst@kolabnow.com>",
   "license": "MIT",
