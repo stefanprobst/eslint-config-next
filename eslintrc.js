@@ -6,7 +6,7 @@ module.exports = {
   },
   env: {
     browser: true,
-    jest: true,
+    "jest/globals": true,
     node: true,
     es2020: true,
   },
@@ -17,6 +17,8 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
