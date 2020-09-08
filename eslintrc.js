@@ -36,6 +36,8 @@ module.exports = {
     },
   },
   rules: {
+    "no-var": ["error"],
+    "prefer-const": ["error"],
     "@next/next/no-html-link-for-pages": ["error", "src/pages"],
     "import/order": [
       "error",
