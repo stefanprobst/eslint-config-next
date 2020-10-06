@@ -1,6 +1,6 @@
 {
   "name": "@stefanprobst/eslint-config-next",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "author": "Stefan Probst <stefanprobst@kolabnow.com>",
@@ -9,7 +9,7 @@
     "eslintrc.js"
   ],
   "peerDependencies": {
-    "@next/eslint-plugin-next": "^9.5.2",
-    "@stefanprobst/eslint-config-next-component": "^1.0.1"
+    "@next/eslint-plugin-next": "^9.5.4",
+    "@stefanprobst/eslint-config-next-component": "^1.0.3"
   }
 }
