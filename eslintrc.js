@@ -39,7 +39,7 @@ module.exports = {
         alphabetize: {
           order: "asc",
         },
-        "newlines-between": "alywys",
+        "newlines-between": "always",
       },
     ],
     "jsx-a11y/anchor-is-valid": [
