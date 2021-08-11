@@ -102,4 +102,12 @@ module.exports = {
     "react/function-component-definition": "error",
     "react/prop-types": "off",
   },
+  overrides: [
+    {
+      files: ["*.config.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
+      },
+    },
+  ],
 };
