@@ -44,7 +44,7 @@ module.exports = {
         null: "ignore",
       },
     ],
-    "no-console": "warn",
+    "no-console": ["warn", { allow: ["warn", "error"] }],
     "no-implicit-coercion": "error",
     "no-param-reassign": "error",
     "no-multiple-empty-lines": "error",
@@ -109,7 +109,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.config.js"],
+      files: ["**/*.config.js"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
       },
