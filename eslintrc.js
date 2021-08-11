@@ -2,44 +2,87 @@ module.exports = {
   root: true,
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@next/next/core-web-vitals",
     "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "next",
     "plugin:jest/recommended",
     "plugin:jest/style",
+    "plugin:cypress/recommended",
     "prettier",
   ],
   env: {
     browser: true,
+    es6: true,
     node: true,
-    es2020: true,
   },
-  settings: {},
+  parserOptions: {
+    project: "./tsconfig.json",
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {
+        project: "./tsconfig.json",
+        alwaysTryTypes: true,
+      },
+    },
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
-    "no-multiple-empty-lines": "error",
-    "no-restricted-globals": [
+    "arrow-body-style": [
       "error",
+      "as-needed",
       {
-        name: "isNaN",
-        message: "Use Number.isNaN instead.",
+        requireReturnForObjectLiteral: true,
       },
     ],
-    "no-var": "error",
+    "consistent-return": "error",
+    eqeqeq: [
+      "error",
+      "always",
+      {
+        null: "ignore",
+      },
+    ],
+    "no-console": "warn",
+    "no-implicit-coercion": "error",
+    "no-param-reassign": "error",
+    "no-throw-literal": "error",
     "prefer-const": "error",
-    "sort-imports": "off",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        default: "generic",
+      },
+    ],
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      },
+    ],
+    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
     "import/first": "error",
-    "import/namespace": "off",
     "import/newline-after-import": "error",
-    "import/no-anonymous-default-export": "error",
     "import/no-duplicates": "error",
-    "import/no-named-as-default": "off",
     "import/order": [
       "error",
       {
+        "newlines-between": "always",
         alphabetize: {
           order: "asc",
+          caseInsensitive: true,
         },
-        "newlines-between": "always",
       },
     ],
     "jsx-a11y/anchor-is-valid": [
@@ -50,12 +93,14 @@ module.exports = {
       },
     ],
     "jsx-a11y/no-autofocus": [
-      "warn",
+      "error",
       {
         ignoreNonDOM: true,
       },
     ],
     "jsx-a11y/no-onchange": "off",
+    "react/boolean-prop-naming": "error",
+    "react/function-component-definition": "error",
     "react/prop-types": "off",
   },
   overrides: [
