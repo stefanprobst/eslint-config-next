@@ -34,14 +34,9 @@ module.exports = {
     },
   },
   rules: {
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      {
-        requireReturnForObjectLiteral: true,
-      },
-    ],
-    "consistent-return": "error",
+    "arrow-body-style": ["error", "always"],
+    /** @see https://github.com/typescript-eslint/typescript-eslint/issues/1277 */
+    // "consistent-return": "error",
     eqeqeq: [
       "error",
       "always",
@@ -52,6 +47,15 @@ module.exports = {
     "no-console": "warn",
     "no-implicit-coercion": "error",
     "no-param-reassign": "error",
+    "no-multiple-empty-lines": "error",
+    "no-restricted-globals": [
+      "error",
+      {
+        name: "isNaN",
+        message: "Use Number.isNaN instead.",
+      },
+    ],
+    "no-var": "error",
     "no-throw-literal": "error",
     "prefer-const": "error",
     "@typescript-eslint/array-type": [
@@ -73,15 +77,16 @@ module.exports = {
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
+    "import/no-anonymous-default-export": "error",
     "import/no-duplicates": "error",
     "import/order": [
       "error",
       {
-        "newlines-between": "always",
         alphabetize: {
           order: "asc",
           caseInsensitive: true,
         },
+        "newlines-between": "always",
       },
     ],
     "jsx-a11y/anchor-is-valid": [
