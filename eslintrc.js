@@ -12,7 +12,6 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
-    "plugin:cypress/recommended",
     "prettier",
   ],
   env: {
