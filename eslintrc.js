@@ -102,44 +102,4 @@ module.exports = {
     "react/function-component-definition": "error",
     "react/prop-types": "off",
   },
-  overrides: [
-    {
-      files: ["**/*.@(ts|tsx)"],
-      extends: [
-        "plugin:@typescript-eslint/recommended",
-        // "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:import/typescript",
-      ],
-      parserOptions: {
-        project: ["./tsconfig.json"],
-      },
-      settings: {
-        "import/resolver": {
-          typescript: {
-            project: "./tsconfig.json",
-            alwaysTryTypes: true,
-          },
-        },
-      },
-      rules: {
-        "@typescript-eslint/array-type": [
-          "error",
-          {
-            default: "generic",
-          },
-        ],
-        "@typescript-eslint/consistent-type-imports": "error",
-        "@typescript-eslint/no-unnecessary-condition": "warn",
-        "@typescript-eslint/no-unused-vars": [
-          "warn",
-          {
-            argsIgnorePattern: "^_",
-            varsIgnorePattern: "^_",
-          },
-        ],
-        "@typescript-eslint/strict-boolean-expressions": "error",
-        "@typescript-eslint/switch-exhaustiveness-check": "error",
-      },
-    },
-  ],
 };
