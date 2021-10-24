@@ -10,8 +10,6 @@ module.exports = {
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
     "prettier",
   ],
   env: {
@@ -113,6 +111,17 @@ module.exports = {
       rules: {
         "@typescript-eslint/no-var-requires": "off",
       },
+    },
+    {
+      files: [
+        "**/__tests__/**/*.@(js|ts|tsx)",
+        "**/*.@(spec|test).@(js|ts|tsx)",
+      ],
+      extends: [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:testing-library/react",
+      ],
     },
   ],
 };
