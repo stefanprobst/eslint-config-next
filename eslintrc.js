@@ -117,6 +117,7 @@ module.exports = {
         "**/__tests__/**/*.@(js|ts|tsx)",
         "**/*.@(spec|test).@(js|ts|tsx)",
       ],
+      excludedFiles: "@(cypress|e2e)/**",
       extends: [
         "plugin:jest/recommended",
         "plugin:jest/style",
