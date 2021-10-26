@@ -1,3 +1,9 @@
+const fs = require("fs");
+
+const tsConfigPath = fs.existsSync("./tsconfig.lint.json")
+  ? "./tsconfig.lint.json"
+  : "./tsconfig.json";
+
 module.exports = {
   root: true,
   extends: [
@@ -12,18 +18,19 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "prettier",
   ],
+  plugins: ["simple-import-sort"],
   env: {
     browser: true,
     es6: true,
     node: true,
   },
   parserOptions: {
-    project: "./tsconfig.json",
+    project: tsConfigPath,
   },
   settings: {
     "import/resolver": {
       typescript: {
-        project: "./tsconfig.json",
+        project: tsConfigPath,
         alwaysTryTypes: true,
       },
     },
@@ -62,6 +69,7 @@ module.exports = {
         default: "generic",
       },
     ],
+    "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/no-unused-vars": [
@@ -71,22 +79,34 @@ module.exports = {
         varsIgnorePattern: "^_",
       },
     ],
+    "@typescript-eslint/sort-type-union-intersection-members": "error",
     "@typescript-eslint/strict-boolean-expressions": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-anonymous-default-export": "error",
     "import/no-duplicates": "error",
-    "import/order": [
-      "error",
-      {
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-        "newlines-between": "always",
-      },
-    ],
+    // "import/order": [
+    //   "error",
+    //   {
+    //     alphabetize: {
+    //       order: "asc",
+    //       caseInsensitive: true,
+    //     },
+    //     "newlines-between": "always",
+    //     pathGroups: [
+    //       {
+    //         pattern: "@/**",
+    //         group: "internal",
+    //       },
+    //       {
+    //         pattern: "~/**",
+    //         group: "internal",
+    //         position: "before",
+    //       },
+    //     ],
+    //   },
+    // ],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -104,6 +124,8 @@ module.exports = {
     "react/boolean-prop-naming": "error",
     "react/function-component-definition": "error",
     "react/prop-types": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
   },
   overrides: [
     {
@@ -122,6 +144,7 @@ module.exports = {
         "plugin:jest/recommended",
         "plugin:jest/style",
         "plugin:testing-library/react",
+        "plugin:jest-dom/recommended",
       ],
     },
   ],

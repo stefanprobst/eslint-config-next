@@ -1,6 +1,6 @@
 {
   "name": "@stefanprobst/eslint-config-next",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "main": "eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "author": "Stefan Probst <stefanprobst@kolabnow.com>",
@@ -9,18 +9,21 @@
     "eslintrc.js"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-jest-dom": "^3.9.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^4.12.4"
   },
   "peerDependencies": {
-    "@next/eslint-plugin-next": ">=11.1.0"
+    "@next/eslint-plugin-next": ">=11.0.0",
+    "eslint": ">=8.0.0"
   }
 }
