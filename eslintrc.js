@@ -6,6 +6,7 @@ const tsConfigPath = fs.existsSync("./tsconfig.lint.json")
 
 module.exports = {
   root: true,
+  reportUnusedDisableDirectives: true,
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -26,6 +27,7 @@ module.exports = {
   },
   parserOptions: {
     project: tsConfigPath,
+    extraFileExtensions: [".mjs"],
   },
   settings: {
     "import/resolver": {
