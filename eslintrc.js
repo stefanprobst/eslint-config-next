@@ -44,42 +44,25 @@ module.exports = {
     "arrow-body-style": ["error", "always"],
     /** @see https://github.com/typescript-eslint/typescript-eslint/issues/1277 */
     // "consistent-return": "error",
-    eqeqeq: [
-      "error",
-      "always",
-      {
-        null: "ignore",
-      },
-    ],
+    eqeqeq: ["error", "always", { null: "ignore" }],
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "no-implicit-coercion": "error",
     "no-param-reassign": "error",
     "no-multiple-empty-lines": "error",
     "no-restricted-globals": [
       "error",
-      {
-        name: "isNaN",
-        message: "Use Number.isNaN instead.",
-      },
+      { name: "isNaN", message: "Use Number.isNaN instead." },
     ],
     "no-var": "error",
     "no-throw-literal": "error",
     "prefer-const": "error",
-    "@typescript-eslint/array-type": [
-      "error",
-      {
-        default: "generic",
-      },
-    ],
+    "@typescript-eslint/array-type": ["error", { default: "generic" }],
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",
-      {
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_",
-      },
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
     "@typescript-eslint/sort-type-union-intersection-members": "error",
     "@typescript-eslint/strict-boolean-expressions": "error",
@@ -88,41 +71,13 @@ module.exports = {
     "import/newline-after-import": "error",
     "import/no-anonymous-default-export": "error",
     "import/no-duplicates": "error",
-    // "import/order": [
-    //   "error",
-    //   {
-    //     alphabetize: {
-    //       order: "asc",
-    //       caseInsensitive: true,
-    //     },
-    //     "newlines-between": "always",
-    //     pathGroups: [
-    //       {
-    //         pattern: "@/**",
-    //         group: "internal",
-    //       },
-    //       {
-    //         pattern: "~/**",
-    //         group: "internal",
-    //         position: "before",
-    //       },
-    //     ],
-    //   },
-    // ],
     "jsx-a11y/anchor-is-valid": [
       "error",
-      {
-        components: ["Link"],
-        aspects: ["invalidHref", "preferButton"],
-      },
+      { components: ["Link"], aspects: ["invalidHref", "preferButton"] },
     ],
-    "jsx-a11y/no-autofocus": [
-      "error",
-      {
-        ignoreNonDOM: true,
-      },
-    ],
+    "jsx-a11y/no-autofocus": ["error", { ignoreNonDOM: true }],
     "jsx-a11y/no-onchange": "off",
+    "jsx-a11y/no-redundant-roles": ["error", { ul: ["list"], ol: ["list"] }],
     "react/boolean-prop-naming": "error",
     "react/function-component-definition": "error",
     "react/prop-types": "off",

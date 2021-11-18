@@ -1,6 +1,6 @@
 {
   "name": "@stefanprobst/eslint-config-next",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "main": "eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "eslint-plugin-testing-library": "^5.0.0"
   },
   "peerDependencies": {
-    "@next/eslint-plugin-next": ">=12.0.0",
+    "@next/eslint-plugin-next": ">=12.0.4",
     "eslint": ">=8.0.0"
   }
 }
