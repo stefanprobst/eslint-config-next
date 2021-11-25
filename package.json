@@ -1,6 +1,6 @@
 {
   "name": "@stefanprobst/eslint-config-next",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "main": "eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "license": "MIT",

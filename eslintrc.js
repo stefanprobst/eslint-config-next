@@ -27,7 +27,7 @@ module.exports = {
   },
   parserOptions: {
     project: tsConfigPath,
-    extraFileExtensions: [".mjs"],
+    extraFileExtensions: [".cjs", ".mjs"],
   },
   settings: {
     "import/resolver": {
@@ -85,6 +85,12 @@ module.exports = {
     "simple-import-sort/exports": "error",
   },
   overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "error",
+      },
+    },
     {
       files: ["**/*.config.js"],
       rules: {
