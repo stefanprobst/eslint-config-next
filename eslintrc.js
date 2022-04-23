@@ -10,6 +10,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:typescript-enum/recommended",
     "plugin:@next/next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/typescript",
@@ -30,6 +31,9 @@ module.exports = {
     extraFileExtensions: [".cjs", ".mjs"],
   },
   settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
     "import/resolver": {
       typescript: {
         project: tsConfigPath,
