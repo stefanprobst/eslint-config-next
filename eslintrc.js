@@ -1,10 +1,4 @@
-const fs = require("fs");
-
-const tsConfigPath = fs.existsSync("./tsconfig.lint.json")
-  ? "./tsconfig.lint.json"
-  : "./tsconfig.json";
-
-module.exports = {
+const config = {
   root: true,
   reportUnusedDisableDirectives: true,
   extends: [
@@ -27,7 +21,7 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    project: tsConfigPath,
+    project: "./**/tsconfig.json",
     extraFileExtensions: [".cjs", ".mjs"],
   },
   settings: {
@@ -36,7 +30,7 @@ module.exports = {
     },
     "import/resolver": {
       typescript: {
-        project: tsConfigPath,
+        project: "./*/tsconfig.json",
         alwaysTryTypes: true,
       },
     },
@@ -90,29 +84,41 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
-      rules: {
-        "@typescript-eslint/explicit-module-boundary-types": "error",
-      },
-    },
-    {
-      files: ["**/*.config.js"],
+      files: ["**/*.cjs"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
       },
     },
     {
-      files: [
-        "**/__tests__/**/*.@(js|ts|tsx)",
-        "**/*.@(spec|test).@(js|ts|tsx)",
-      ],
-      excludedFiles: "@(cypress|e2e)/**",
+      files: ["**/*.test.@(ts|tsx)"],
       extends: [
         "plugin:jest/recommended",
         "plugin:jest/style",
-        "plugin:testing-library/react",
         "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
       ],
+    },
+    {
+      files: ["**/*.test.e2e.@(ts|tsx)"],
+      extends: "plugin:cypress/recommended",
+    },
+    {
+      files: ["**/*.stories.tsx"],
+      plugins: ["storybook"],
+      rules: {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "storybook/await-interactions": "error",
+        "storybook/context-in-play-function": "error",
+        "storybook/default-exports": "error",
+        "storybook/hierarchy-separator": "warn",
+        "storybook/no-redundant-story-name": "warn",
+        "storybook/prefer-pascal-case": "warn",
+        "storybook/story-exports": "error",
+        "storybook/use-storybook-expect": "error",
+        "storybook/use-storybook-testing-library": "error",
+      },
     },
   ],
 };
+
+module.exports = config;

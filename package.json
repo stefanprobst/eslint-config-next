@@ -1,6 +1,6 @@
 {
   "name": "@stefanprobst/eslint-config-next",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "main": "eslintrc.js",
   "repository": "git@github.com:stefanprobst/eslint-config-next.git",
   "license": "MIT",
@@ -8,18 +8,20 @@
     "eslintrc.js"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.2.4",
-    "eslint-plugin-jest-dom": "^3.9.2",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.27.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-testing-library": "^5.0.0",
+    "eslint-plugin-storybook": "^0.5.12",
+    "eslint-plugin-testing-library": "^5.5.0",
     "eslint-plugin-typescript-enum": "^2.1.0"
   },
   "peerDependencies": {
