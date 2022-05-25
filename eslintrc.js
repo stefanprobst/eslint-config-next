@@ -30,7 +30,12 @@ const config = {
     },
     "import/resolver": {
       typescript: {
-        project: "./*/tsconfig.json",
+        /**
+         * Providing a glob here makes `import/namespace` ten times slower.
+         * It's also only needed if we have defined a `paths` option in multiple `tsconfig.json` files.
+         * @see https://github.com/alexgorbatchev/eslint-import-resolver-typescript/blob/master/src/index.ts#L283-L312
+         */
+        // project: "./**/tsconfig.json",
         alwaysTryTypes: true,
       },
     },
