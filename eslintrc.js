@@ -21,7 +21,12 @@ const config = {
     node: true,
   },
   parserOptions: {
-    project: "./**/tsconfig.json",
+    project: [
+      "./tsconfig.json",
+      "./apps/*/tsconfig.json",
+      "./examples/*/tsconfig.json",
+      "./packages/*/tsconfig.json",
+    ],
     extraFileExtensions: [".cjs", ".mjs"],
   },
   settings: {
@@ -30,12 +35,12 @@ const config = {
     },
     "import/resolver": {
       typescript: {
-        /**
-         * Providing a glob here makes `import/namespace` ten times slower.
-         * It's also only needed if we have defined a `paths` option in multiple `tsconfig.json` files.
-         * @see https://github.com/alexgorbatchev/eslint-import-resolver-typescript/blob/master/src/index.ts#L283-L312
-         */
-        // project: "./**/tsconfig.json",
+        project: [
+          "./tsconfig.json",
+          "./apps/*/tsconfig.json",
+          "./examples/*/tsconfig.json",
+          "./packages/*/tsconfig.json",
+        ],
         alwaysTryTypes: true,
       },
     },
@@ -52,21 +57,21 @@ const config = {
     "no-implicit-coercion": "error",
     "no-param-reassign": "error",
     "no-multiple-empty-lines": "error",
-    "no-restricted-globals": [
-      "error",
-      { name: "isNaN", message: "Use Number.isNaN instead." },
-    ],
+    "no-restricted-globals": ["error", { name: "isNaN", message: "Use Number.isNaN instead." }],
     "no-var": "error",
     "no-throw-literal": "error",
     "prefer-const": "error",
     "@typescript-eslint/array-type": ["error", { default: "generic" }],
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-imports": "error",
+    // "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",
       { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
     ],
+    "@typescript-eslint/require-array-sort-compare": "error",
     "@typescript-eslint/sort-type-union-intersection-members": "error",
     "@typescript-eslint/strict-boolean-expressions": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
@@ -109,18 +114,9 @@ const config = {
     },
     {
       files: ["**/*.stories.tsx"],
-      plugins: ["storybook"],
+      extends: "plugin:storybook/recommended",
       rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "storybook/await-interactions": "error",
-        "storybook/context-in-play-function": "error",
-        "storybook/default-exports": "error",
-        "storybook/hierarchy-separator": "warn",
-        "storybook/no-redundant-story-name": "warn",
-        "storybook/prefer-pascal-case": "warn",
-        "storybook/story-exports": "error",
-        "storybook/use-storybook-expect": "error",
-        "storybook/use-storybook-testing-library": "error",
       },
     },
   ],
