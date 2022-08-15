@@ -17,7 +17,7 @@ const config = {
   plugins: ["simple-import-sort"],
   env: {
     browser: true,
-    es6: true,
+    es2019: true,
     node: true,
   },
   parserOptions: {
@@ -56,7 +56,6 @@ const config = {
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "no-implicit-coercion": "error",
     "no-param-reassign": "error",
-    "no-multiple-empty-lines": "error",
     "no-restricted-globals": ["error", { name: "isNaN", message: "Use Number.isNaN instead." }],
     "no-var": "error",
     "no-throw-literal": "error",
